@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URGTest", "URGTest\URGTest.csproj", "{C0C732F0-2B62-45C2-8E55-8F813D4580C1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBF.Sensors", "MBF.Sensors\MBF.Sensors.csproj", "{D99F690A-00FA-49FB-8209-0ABC060901AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Debug|x86.Build.0 = Debug|x86
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Release|x86.ActiveCfg = Release|x86
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Release|x86.Build.0 = Release|x86
+		{D99F690A-00FA-49FB-8209-0ABC060901AE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D99F690A-00FA-49FB-8209-0ABC060901AE}.Debug|x86.Build.0 = Debug|Any CPU
+		{D99F690A-00FA-49FB-8209-0ABC060901AE}.Release|x86.ActiveCfg = Release|Any CPU
+		{D99F690A-00FA-49FB-8209-0ABC060901AE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		outputpath = ..\..\debug

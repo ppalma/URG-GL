@@ -3,14 +3,21 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../src/MBF.Sensors/URG.cs" ctype="Workbench">
+    <Files>
+      <File FileName="../../src/MBF.Sensors/URG.cs" Line="12" Column="23" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="URGTest" expanded="True" selected="True">
+          <Node name="MBF.Sensors" expanded="True" selected="True">
             <Node name="ExternalFiles" expanded="True" />
           </Node>
+          <Node name="URGTest" expanded="True" />
         </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
