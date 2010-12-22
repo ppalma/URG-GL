@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG", "URG\URG.csproj", "{479ABA63-F612-4974-960D-A4DAD9F04F8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URGTest", "URGTest\URGTest.csproj", "{D78AADAD-4CF3-4A28-95A0-57DAAA35057C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URGGlTest", "URGGlTest\URGGlTest.csproj", "{5399B8EC-65AE-469B-B2EA-23FB8082A711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URGGlMotorTest", "URGGlMotorTest\URGGlMotorTest.csproj", "{13113151-DA32-402E-A5DC-C8D85FA89563}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBF.HMIDevices", "..\monoBOTICS\Build\MonoDevelop\MBF.HMIDevices\MBF.HMIDevices.csproj", "{3978850F-7DDD-4F02-839C-9DADAE57F15A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URGGIMotorSpatialTest", "URGGIMotorSpatialTest\URGGIMotorSpatialTest.csproj", "{DD9270C7-391B-4C0A-9982-EB12AADC059A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13113151-DA32-402E-A5DC-C8D85FA89563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13113151-DA32-402E-A5DC-C8D85FA89563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13113151-DA32-402E-A5DC-C8D85FA89563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13113151-DA32-402E-A5DC-C8D85FA89563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3978850F-7DDD-4F02-839C-9DADAE57F15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3978850F-7DDD-4F02-839C-9DADAE57F15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3978850F-7DDD-4F02-839C-9DADAE57F15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3978850F-7DDD-4F02-839C-9DADAE57F15A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{479ABA63-F612-4974-960D-A4DAD9F04F8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{479ABA63-F612-4974-960D-A4DAD9F04F8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{479ABA63-F612-4974-960D-A4DAD9F04F8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{479ABA63-F612-4974-960D-A4DAD9F04F8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5399B8EC-65AE-469B-B2EA-23FB8082A711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5399B8EC-65AE-469B-B2EA-23FB8082A711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5399B8EC-65AE-469B-B2EA-23FB8082A711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5399B8EC-65AE-469B-B2EA-23FB8082A711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D78AADAD-4CF3-4A28-95A0-57DAAA35057C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D78AADAD-4CF3-4A28-95A0-57DAAA35057C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D78AADAD-4CF3-4A28-95A0-57DAAA35057C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D78AADAD-4CF3-4A28-95A0-57DAAA35057C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD9270C7-391B-4C0A-9982-EB12AADC059A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD9270C7-391B-4C0A-9982-EB12AADC059A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD9270C7-391B-4C0A-9982-EB12AADC059A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD9270C7-391B-4C0A-9982-EB12AADC059A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = URGGIMotorSpatialTest\URGGIMotorSpatialTest.csproj
+	EndGlobalSection
+EndGlobal

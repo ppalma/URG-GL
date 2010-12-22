@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13113151-DA32-402E-A5DC-C8D85FA89563}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>URGGlMotorTest</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <RootNamespace>URGGlMotorTest</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="CSScriptLibrary, Version=1.0.3113.36099, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\CSScriptLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Core, Version=0.3.249.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\ISE.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.CSScriptLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\ISE.CSScriptLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Flow, Version=0.3.3951.29831, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\ISE.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.FreeType, Version=0.3.3887.21992, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\ISE.FreeType.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Geometry, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\ISE.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Networking, Version=0.3.3887.21993, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\ISE.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.System, Version=0.3.3951.29830, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\ISE.System.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Actuators, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.Actuators.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Bluetooth, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.Bluetooth.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.CWiidSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.CWiidSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Math, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Motors, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.Motors.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Ports, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.Ports.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.RobotKits, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.RobotKits.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Sensors, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\MBF.Sensors.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.FreeGlut, Version=2.4.0.1, Culture=neutral, PublicKeyToken=6e602a6ad6c0d06d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\Tao.FreeGlut.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl, Version=2.1.0.4, Culture=neutral, PublicKeyToken=1ca010269a4501ef">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="URG, Version=1.0.3961.26640, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\URGGlTest\bin\Debug\URG.dll</HintPath>
+    </Reference>
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="MBF.HMIDevices, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.HMIDevices.dll</HintPath>
+    </Reference>
+    <Reference Include="Phidget21.NET, Version=2.1.7.16, Culture=neutral, PublicKeyToken=c2b1f2a3594bce52">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Phidget21.NET\Phidgets\Phidget21.NET.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="URGDataDraw.cs" />
+    <Compile Include="RobotKit.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

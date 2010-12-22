@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5399B8EC-65AE-469B-B2EA-23FB8082A711}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>URGGlTest</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <RootNamespace>URGGlTest</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="CSScriptLibrary, Version=1.0.3113.36099, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CSScriptLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Core, Version=0.3.249.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ISE.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.CSScriptLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ISE.CSScriptLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Flow, Version=0.3.3951.29831, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ISE.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.FreeType, Version=0.3.3887.21992, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ISE.FreeType.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Geometry, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ISE.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.Networking, Version=0.3.3887.21993, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ISE.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="ISE.System, Version=0.3.3951.29830, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ISE.System.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Actuators, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.Actuators.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Bluetooth, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.Bluetooth.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.CWiidSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.CWiidSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.HMIDevices, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.HMIDevices.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Math, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Motors, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.Motors.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Ports, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.Ports.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.RobotKits, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.RobotKits.dll</HintPath>
+    </Reference>
+    <Reference Include="MBF.Sensors, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MBF.Sensors.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.FreeGlut, Version=2.4.0.1, Culture=neutral, PublicKeyToken=6e602a6ad6c0d06d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tao.FreeGlut.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl, Version=2.1.0.4, Culture=neutral, PublicKeyToken=1ca010269a4501ef">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Tao.OpenGl.dll</HintPath>
+    </Reference>
+    <Reference Include="URG, Version=1.0.3961.26640, Culture=neutral, PublicKeyToken=null">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\URG.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="URGDataDraw.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
