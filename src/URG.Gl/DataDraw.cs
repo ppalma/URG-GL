@@ -101,7 +101,22 @@ namespace URG.Gl
 			
 			Glut.glutSwapBuffers();
 		}
-			public void drawLaser(Line line, double ratio)
+		
+		protected override void ReshapeHandler(int width, int height)
+		{
+	
+			Tao.OpenGl.Gl.glViewport(0, 0, width, height);
+
+  			Tao.OpenGl.Gl.glMatrixMode(Tao.OpenGl.Gl.GL_PROJECTION);
+  			Tao.OpenGl.Gl.glLoadIdentity();
+
+  			double aspect = 1.0 * width / height;
+  			Tao.OpenGl.Gl.glOrtho(-5000 * aspect, 5000 * aspect, -5000, 5000, -100000, 100000);
+
+  			Tao.OpenGl.Gl.glMatrixMode(Tao.OpenGl.Gl.GL_MODELVIEW);
+		}
+		
+		public void drawLaser(Line line, double ratio)
   		{
     		Tao.OpenGl.Gl.glColor3d(0.6, 0.0, 0.0);
 
