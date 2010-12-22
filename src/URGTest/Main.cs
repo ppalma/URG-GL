@@ -6,7 +6,7 @@ namespace URGTest
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello World!");
+			Console.WriteLine ("Hello World from URG console test");
 			URG urg = new URG();
 			urg.Connect();
 		}
