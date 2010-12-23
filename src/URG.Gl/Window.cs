@@ -74,13 +74,13 @@ namespace URG.Gl
 
 				//signal handlers
 				Glut.glutKeyboardFunc(new Glut.KeyboardCallback(KeyboardHandler));
-//				Glut.glutMouseFunc(new Glut.MouseCallback(MouseHandler));
-//				Glut.glutMotionFunc(new Glut.MotionCallback(MotionHandler));
-//				Glut.glutIdleFunc(new Glut.IdleCallback(IdleHandler));
+				Glut.glutMouseFunc(new Glut.MouseCallback(MouseHandler));
+				Glut.glutMotionFunc(new Glut.MotionCallback(MotionHandler));
+				Glut.glutIdleFunc(new Glut.IdleCallback(IdleHandler));
 				Glut.glutReshapeFunc(new Glut.ReshapeCallback(ReshapeHandler)); 
 				Glut.glutDisplayFunc(new Glut.DisplayCallback(PaintHandler)); 
-//				Glut.glutWMCloseFunc(new Glut.WindowCloseCallback(WindowsCloseHandler));
-//				Glut.glutTimerFunc(1, new Glut.TimerCallback(TimerHandler), 0);
+				Glut.glutWMCloseFunc(new Glut.WindowCloseCallback(WindowsCloseHandler));
+				Glut.glutTimerFunc(1, new Glut.TimerCallback(TimerHandler), 0);
 				
 				//Gl/Glut initialized correclty
 				isInitialized = true;
@@ -91,18 +91,24 @@ namespace URG.Gl
 		{
 			Console.WriteLine("Keyboar Handler: key = {0}. x ={1}. y = {2}",key, x,y); 
 		}
-		protected virtual void MouseMovHandler(int x, int y)
+		protected virtual void MouseHandler(int button, int state, int x, int y)
 		{
 			Console.WriteLine("Mouse 2D position ({0},{1})",x,y); 
 		}
-		protected virtual void MouseDragHandler(int x, int y)
+		protected virtual void MotionHandler(int x, int y)
 		{
-			Console.WriteLine("Mouse 2D drag position ({0},{1})",x,y);
+			Console.WriteLine("Motion Handler: x = {0}. y = {1}",x,y);
 		}
+		protected virtual void TimerHandler(int val)
+		{
+			Console.WriteLine("Timer Handler: val = {0}",val); 
+		}
+		protected virtual void IdleHandler(){}
+		protected virtual void WindowsCloseHandler(){}
+		
 		public void Show()
 		{
 			HotKeys();
-		
 			AmbientInitialization();
 		}
 	}
