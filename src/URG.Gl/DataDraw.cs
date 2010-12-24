@@ -68,7 +68,7 @@ namespace URG.Gl
 		
 		public Point last_pos_ = new Point(0 ,0);
 		
-		private int ticks;
+		protected int ticks;
 		public int magnify_ = 50;
 		public bool no_plot_ = false ;
 		Lines saved_lines_data_ = new Lines();
@@ -181,25 +181,7 @@ namespace URG.Gl
 			return i;
 		}
 		
-		protected void drawLaser(Line line, double ratio)
-		{
-			Tao.OpenGl.Gl.glColor3d(0.6, 0.0, 0.0);
-			
-			int index = 0;
-			foreach (Point3d<int> it in line.points) {
-				
-				if ((it.x == 0) && (it.y == 0) && (it.z == 0)) {
-					continue;
-				}
-				
-				if ((index & 0x3) == 0x00) {
-					Tao.OpenGl.Gl.glBegin(Tao.OpenGl.Gl.GL_LINE_STRIP);
-					Tao.OpenGl.Gl.glVertex3d(0.0, 0.0, 0.0);
-					Tao.OpenGl.Gl.glVertex3d(it.x * ratio, it.y * ratio, it.z * ratio);
-					Tao.OpenGl.Gl.glEnd();
-				}
-			}
-		}
+
 		
 		public void drawLine(Line line, bool record, double ratio)
 		{
@@ -265,9 +247,9 @@ namespace URG.Gl
 				drawLine(line_it, true, ratio);
 			}
 			
-			if (! no_plot_) {
-				drawLaser(recent_line_data_, ratio);
-			}
+//			if (! no_plot_) {
+//				drawLaser(recent_line_data_, ratio);
+//			}
 			
 			Tao.OpenGl.Gl.glEnd();
 			Glut.glutSwapBuffers();
@@ -452,22 +434,6 @@ namespace URG.Gl
 			{
 				LoadVrml(filename);
 			}
-		}
-		private void SensorInitialization()
-		{
-			sensor = new MBF.Sensors.URG("/dev/ttyACM0");
-			try {
-				sensor.Connect();
-				Console.WriteLine(sensor.ToString());
-			} 
-			catch (Exception e) {
-				Console.WriteLine("URG Error: {0}", e.Message);
-			}
-		}
-		override public void Show()
-		{
-			SensorInitialization();
-			base.Show();
 		}
 		public void LoadVrml(string filename)
 		{
