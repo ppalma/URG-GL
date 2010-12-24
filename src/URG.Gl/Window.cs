@@ -52,7 +52,7 @@ namespace URG.Gl
 		{
 		}
 		protected virtual void HotKeys(){}
-		private int glutWnd;
+		private int glutWnd = 0;
 		private bool isInitialized;
 		
 		protected abstract void PaintHandler();
@@ -70,7 +70,7 @@ namespace URG.Gl
 				Tao.OpenGl.Gl.glEnable(Tao.OpenGl.Gl.GL_CULL_FACE);
 				Tao.OpenGl.Gl.glEnable(Tao.OpenGl.Gl.GL_TEXTURE_2D);
 				
-	        	glutWnd = Glut.glutCreateWindow("URG 3D Scanner");
+	        	this.glutWnd = Glut.glutCreateWindow("URG 3D Scanner");
 
 				//signal handlers
 				Glut.glutKeyboardFunc(new Glut.KeyboardCallback(KeyboardHandler));
@@ -106,7 +106,7 @@ namespace URG.Gl
 		protected virtual void IdleHandler(){}
 		protected virtual void WindowsCloseHandler(){}
 		
-		public void Show()
+		public virtual void Show()
 		{
 			HotKeys();
 			AmbientInitialization();

@@ -6,8 +6,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="../../src/URG.Gl/DataDraw.cs" ctype="Workbench">
     <Files>
       <File FileName="../../src/URG.Gl/Main.cs" Line="11" Column="15" />
-      <File FileName="../../src/URG.Gl/Window.cs" Line="50" Column="16" />
-      <File FileName="../../src/URG.Gl/DataDraw.cs" Line="112" Column="48" />
+      <File FileName="../../src/URG.Gl/Window.cs" Line="55" Column="25" />
+      <File FileName="../../src/URG.Gl/DataDraw.cs" Line="473" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

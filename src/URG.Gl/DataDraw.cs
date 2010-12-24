@@ -39,14 +39,29 @@ using System.Collections.Generic;
 using System.Drawing;
 namespace URG.Gl
 {
-
-
+	
+	
 	public class DataDraw:Window
 	{
-		public DataDraw() :base(){}		
+		public DataDraw() :base()
+		{
+			x_rot_ =0;
+			y_rot_ = 0;
+			z_rot_ = 0;
+			magnify_ = 50;
+			no_plot_ = false;
+			intensity_mode_= false;
+			
+			for (int mm_height = 0; mm_height < 1000; ++mm_height) {
+				int r, g, b;
+				HsvToRgb(360.0 * mm_height / 1000.0, 1, 1, out r, out g, out b);
+				color_table_.Add(new Point3d<double>(r / 255.0, g / 255.0, b / 255.0));
+			}
+		}
+		
 		public int x_rot_ = 0;
-  		public int y_rot_ = 0;
-  		public int z_rot_ = 0;
+		public int y_rot_ = 0;
+		public int z_rot_ = 0;
 		
 		Lines normal_lines_data_ = new Lines();
 		public int AliveMsec = 3; //20;  
@@ -65,13 +80,112 @@ namespace URG.Gl
 		
 		protected MBF.Sensors.URG sensor;
 		
-		public void drawLaser(Line line, double ratio)
+		private void HsvToRgb(double h, double S, double V, out int r, out int g, out int b)
+		{
+			// ######################################################################
+			// T. Nathan Mundhenk
+			// mundhenk@usc.edu
+			// C/C++ Macro HSV to RGB
+
+			double H = h;
+			while (H < 0) { H += 360; };
+			while (H >= 360) { H -= 360; };
+			double R, G, B;
+			if (V <= 0)
+			{ R = G = B = 0; }
+			else if (S <= 0)
+			{
+				R = G = B = V;
+			}
+			else
+			{
+				double hf = H / 60.0;
+				int i = (int)Math.Floor(hf);
+				double f = hf - i;
+				double pv = V * (1 - S);
+				double qv = V * (1 - S * f);
+				double tv = V * (1 - S * (1 - f));
+				switch (i)
+				{
+					// Red is the dominant color
+				case 0:
+					R = V;
+					G = tv;
+					B = pv;
+					break;
+					
+					// Green is the dominant color
+					
+				case 1:
+					R = qv;
+					G = V;
+					B = pv;
+					break;
+				case 2:
+					R = pv;
+					G = V;
+					B = tv;
+					break;
+					
+					// Blue is the dominant color
+					
+				case 3:
+					R = pv;
+					G = qv;
+					B = V;
+					break;
+				case 4:
+					R = tv;
+					G = pv;
+					B = V;
+					break;	
+					
+					// Red is the dominant color
+					
+				case 5:
+					R = V;
+					G = pv;
+					B = qv;
+					break;
+					
+					// Just in case we overshoot on our math by a little, we put these here. Since its a switch it won't slow us down at all to put these here.
+					
+				case 6:
+					R = V;
+					G = tv;
+					B = pv;
+					break;
+				case -1:
+					R = V;
+					G = pv;
+					B = qv;
+					break;
+
+					// The color is not defined, we should throw an error.
+
+				default:
+					//LFATAL("i Value error in Pixel conversion, Value is %d", i);
+					R = G = B = V; // Just pretend its black/white
+					break;
+				}
+			}
+			r = Clamp((int)(R * 255.0));
+			g = Clamp((int)(G * 255.0));
+			b = Clamp((int)(B * 255.0));
+		}
+
+		private int Clamp(int i)
+		{
+			if (i < 0) return 0;
+			if (i > 255) return 255;
+			return i;
+		}
+		
+		protected void drawLaser(Line line, double ratio)
 		{
 			Tao.OpenGl.Gl.glColor3d(0.6, 0.0, 0.0);
 			
 			int index = 0;
-			//for (Points::iterator it = line.points.begin();
-			//	it != line.points.end(); ++it, ++index) {
 			foreach (Point3d<int> it in line.points) {
 				
 				if ((it.x == 0) && (it.y == 0) && (it.z == 0)) {
@@ -118,6 +232,8 @@ namespace URG.Gl
 				index++;
 			}
 		}
+		
+		
 #region SceneHandlers
 		protected override void PaintHandler ()
 		{
@@ -131,21 +247,16 @@ namespace URG.Gl
 			
 			while ((normal_lines_data_.Count > 0) &&
 			       ((normal_lines_data_[0].timestamp + AliveMsec) < ticks)) {
-				//normal_lines_data_.pop_front();
 				normal_lines_data_.Remove(normal_lines_data_[0]);
-				
 			}
 			
 			Tao.OpenGl.Gl.glBegin(Tao.OpenGl.Gl.GL_POINTS);
-
+			
 			double ratio = (1.0 / 2.0) + (5.0 * magnify_ / 100.0);
 			
 			if (! no_plot_) {
 				
-				//for (Lines::iterator line_it = normal_lines_data_.begin();
-				//     					line_it != normal_lines_data_.end(); ++line_it)
 				foreach (Line line_it in normal_lines_data_) {
-					// !!! false をマクロに置き換える
 					drawLine(line_it, false, ratio); 
 				}
 			}
@@ -153,14 +264,12 @@ namespace URG.Gl
 			foreach (Line line_it in saved_lines_data_) {
 				drawLine(line_it, true, ratio);
 			}
-
 			
 			if (! no_plot_) {
 				drawLaser(recent_line_data_, ratio);
 			}
 			
 			Tao.OpenGl.Gl.glEnd();
-			
 			Glut.glutSwapBuffers();
 		}
 			
@@ -169,68 +278,12 @@ namespace URG.Gl
 			switch (key)
 			{
 			case (byte)'m': 
-                        case (byte)'M': 
+			case (byte)'M': 
 				this.magnify_ += 10;
 				break;
 			case (byte)'n': 
 			case (byte)'N': 
 				this.magnify_ -= 10;
-                                break;
-			case (byte)'w': 
-			case (byte)'W': 
-//				                                bigfoot.Fordward();
-				break;
-			case (byte)'s': 
-			case (byte)'S':
-//				                                bigfoot.Backward();
-				break;
-			case (byte)'a': 
-			case (byte)'A': 
-//				                                bigfoot.TurnLeft();
-				break;
-			case (byte)'d': 
-			case (byte)'D': 
-//				                                bigfoot.TurnRigth();
-				break;
-			case (byte)'+': 
-//				                                bigfoot.Power+=5;
-//				                                Console.Write("Incressing power to " + bigfoot.Power);
-				break;
-			case (byte)'-': 
-//				                                bigfoot.Power-=5;
-//				                                Console.Write("Decressing power to " + bigfoot.Power);
-				break;
-			case (byte)'i': 
-			case (byte)'I': 
-//				servoPos+=servoSteep;
-				break;
-			case (byte)'K': 
-			case (byte)'k': 
-//				servoPos-=servoSteep;
-				break;
-			case (byte)'j': 
-                        case (byte)'J':  
-				//                                bigfoot.CamLeft();
-				break;
-			case (byte)'l': 
-			case (byte)'L': 
-				//                                bigfoot.CamRight();
-				break;
-			case (byte)'{':  
-//				servoSteep -=0.5;
-//				Console.WriteLine("Decreasing step to {0}",servoSteep );
-				break;
-			case (byte)'}':  
-//				servoSteep +=0.5;
-//				Console.WriteLine("Increasing step to {0}",servoSteep );
-				break;
-			case (byte)'c': 
-			case (byte)'C': 
-				this.record  = true;
-				break;
-			case (byte)'v': 
-			case (byte)'V': 
-				this.record = false;
 				break;
 			case (byte)'P': 
 			case (byte)'p': 
@@ -250,15 +303,13 @@ namespace URG.Gl
 				this.plot = !this.plot;
 				break;
 			case (byte)'.': 
-//				                                bigfoot.Off();
-//				sensor.Disconnect();
 				System.Environment.Exit(0);
 				break;
 			default:
 				Console.WriteLine(key);
-//				                                bigfoot.Stop();
 				break;
 			}
+			base.KeyboardHandler(key,x,y);
 		}
 	
 		protected override void ReshapeHandler(int width, int height)
@@ -286,27 +337,10 @@ namespace URG.Gl
 			Console.WriteLine("\t m : Zoom in  | Scroll down");
 			Console.WriteLine("\t n : Zoom Out | Scroll up");
                         
-			Console.WriteLine("Navigation");
-			Console.WriteLine("\t w  : FF");
-			Console.WriteLine("\t s  : FWD");
-			Console.WriteLine("\t d  : Right");
-			Console.WriteLine("\t a  : Left");
-			Console.WriteLine("\t +/-: Increase/Decrease Power ");
-			
-			Console.WriteLine("Scan");
-			Console.WriteLine("\t \t { / } : Increase/Decrease Step");
-                        
-			Console.WriteLine("\t Manual");
-			Console.WriteLine("\t\t i : Up");
-			Console.WriteLine("\t\t j : Down");
-			Console.WriteLine("\t\t k : Rigth");
-			Console.WriteLine("\t\t l : Left");
+			Console.WriteLine("Laser");
+
 			Console.WriteLine("\t\t r : Start/Stop record");
 			Console.WriteLine("\t\t t : Show/Hide Laser");
-
-			Console.WriteLine("\t Auto");
-			Console.WriteLine("\t\t c : Start");
-			Console.WriteLine("\t\t v : Cancel");
                         
 			Console.WriteLine("Files");
 			Console.WriteLine("\t o : Open");
@@ -366,9 +400,11 @@ namespace URG.Gl
 			Glut.glutTimerFunc(1, new Glut.TimerCallback(TimerHandler), value);
 
 		}
-
+		
 #endregion
-#region SetAxisRotation	
+#region Rotations	
+		
+	
 		private void setXRotation(int angle)
 		{
 			angle = normalizeAngle(angle);
@@ -408,6 +444,7 @@ namespace URG.Gl
 			return angle;
 		}
 #endregion
+		
 		public void LoadVrml()
 		{
 			string filename = "/usr/src/git/URG-GL/tmp/vater.wrl"; 
@@ -415,6 +452,22 @@ namespace URG.Gl
 			{
 				LoadVrml(filename);
 			}
+		}
+		private void SensorInitialization()
+		{
+			sensor = new MBF.Sensors.URG("/dev/ttyACM0");
+			try {
+				sensor.Connect();
+				Console.WriteLine(sensor.ToString());
+			} 
+			catch (Exception e) {
+				Console.WriteLine("URG Error: {0}", e.Message);
+			}
+		}
+		override public void Show()
+		{
+			SensorInitialization();
+			base.Show();
 		}
 		public void LoadVrml(string filename)
 		{
@@ -432,14 +485,14 @@ namespace URG.Gl
 					try{
 						char [] separators = new char [] {' '};
 						string [] parts = line.Split (separators, StringSplitOptions.RemoveEmptyEntries);
-						if (double.TryParse (parts [0] , out x) &&
+						if (double.TryParse (parts [0], out x) &&
 						    double.TryParse (parts [1], out y) &&
 						    double.TryParse (parts [2], out z)) 
 						{
 							line_data.points.Add(new Point3d<int>((int)(x*1000),(int)(y*1000),(int)(z*1000)));
 						}
 					}
-					catch(Exception e){}
+					catch(Exception e){ Console.WriteLine(e.Message);}
 				}
 				Console.WriteLine("finished load");
 				this.saved_lines_data_.Clear();
