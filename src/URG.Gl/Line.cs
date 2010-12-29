@@ -35,7 +35,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace URG.Gl
+namespace URG.GL
 {
 	public class Line
 	{

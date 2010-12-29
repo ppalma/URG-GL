@@ -7,16 +7,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBF.Sensors", "MBF.Sensors\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.Gl", "URG.Gl\URG.Gl.csproj", "{73C0D42F-B1A8-428F-8D09-B49CA77495AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.DataDraw", "URG.GL.DataDraw\URG.GL.DataDraw.csproj", "{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.LaserDataDraw", "URG.GL.LaserDataDraw\URG.GL.LaserDataDraw.csproj", "{15EED367-C0FA-4072-B02B-568AE66A3989}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15EED367-C0FA-4072-B02B-568AE66A3989}.Debug|x86.ActiveCfg = Debug|x86
+		{15EED367-C0FA-4072-B02B-568AE66A3989}.Debug|x86.Build.0 = Debug|x86
+		{15EED367-C0FA-4072-B02B-568AE66A3989}.Release|x86.ActiveCfg = Release|x86
+		{15EED367-C0FA-4072-B02B-568AE66A3989}.Release|x86.Build.0 = Release|x86
 		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Debug|x86.ActiveCfg = Debug|x86
 		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Debug|x86.Build.0 = Debug|x86
 		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Release|x86.ActiveCfg = Release|x86
 		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Release|x86.Build.0 = Release|x86
+		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Debug|x86.ActiveCfg = Debug|x86
+		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Debug|x86.Build.0 = Debug|x86
+		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Release|x86.ActiveCfg = Release|x86
+		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Release|x86.Build.0 = Release|x86
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Debug|x86.ActiveCfg = Debug|x86
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Debug|x86.Build.0 = Debug|x86
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Release|x86.ActiveCfg = Release|x86
@@ -28,6 +40,6 @@ Global
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		outputpath = ..\..\debug
-		StartupItem = URG.Gl\URG.Gl.csproj
+		StartupItem = URG.GL.DataDraw\URG.GL.DataDraw.csproj
 	EndGlobalSection
 EndGlobal

@@ -40,7 +40,7 @@ using Tao.FreeGlut;
 
 using Tao;
 
-namespace URG.Gl
+namespace URG.GL
 {
 
 

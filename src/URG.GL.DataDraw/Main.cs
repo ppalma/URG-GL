@@ -1,8 +1,8 @@
 #region Header
-//     Lines.cs created with MonoDevelop
-//     User: Patricio Palma S. as ppalma at 5:17 PM 12/22/2010
+//     Main.cs created with MonoDevelop
+//     User: Patricio Palma S. as ppalma at 4:18 PM 12/29/2010
 //     --------------------------------------------------------------------------
-//     URG.Gl
+//     URG.GL.LaserDataDraw
 //     Copyright (C) 2006-2008  Patricio Palma S. All Rights Reserved.
 // 
 //     This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 //     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //     --------------------------------------------------------------------------
 // 
-//     UNIT                : Lines.cs
+//     UNIT                : Main.cs
 //     SUMMARY            :     
 //     PRINCIPLE AUTHOR     : Patricio Palma S. <mail@ppalma.cl>
 // 
@@ -33,10 +33,16 @@
 #endregion Revisions
 
 using System;
-using System.Collections.Generic;
+
 namespace URG.GL
 {
-	public class Lines:List<Line>
+	class MainClass
 	{
+		public static void Main (string[] args)
+		{
+			Console.WriteLine ("Hello URG Gl Data Draw Test!");
+			URG.GL.DataDraw win = new URG.GL.DataDraw();
+			win.Show();
+		}
 	}
 }
