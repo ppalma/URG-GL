@@ -40,8 +40,9 @@ namespace URG.GL
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello URG Gl  Lase data draw Test!");
-			
+			Console.WriteLine ("Hello URG Gl  motor spatial Test!");
+			MotorSpatial ms = new MotorSpatial();
+			ms.Show();
 		}
 	}
 }
