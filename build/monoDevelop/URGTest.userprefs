@@ -3,29 +3,26 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../src/URG.Gl/Window.cs" ctype="Workbench">
-    <Files>
-      <File FileName="../../src/URG.Gl/Line.cs" Line="1" Column="1" />
-      <File FileName="../../src/URG.Gl/Window.cs" Line="64" Column="14" />
-      <File FileName="../../src/URG.GL.DataDraw/Main.cs" Line="45" Column="10" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ctype="Workbench">
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True">
-          <Node name="URG.Gl" expanded="True">
-            <Node name="References" expanded="True" />
-            <Node name="ExternalFiles" expanded="True" />
-          </Node>
-          <Node name="URG.GL.DataDraw" expanded="True">
-            <Node name="ExternalFiles" expanded="True" />
-          </Node>
-        </State>
+        <State expanded="True" />
       </Pad>
       <Pad Id="ClassPad">
-        <State expanded="True" selected="True">
+        <State expanded="True">
           <Node name="URG.Gl" expanded="True">
             <Node name="URG" expanded="True" />
           </Node>
+          <Node name="URG.GL.LaserDataDraw" expanded="True">
+            <Node name="URG" expanded="True">
+              <Node name="GL" expanded="True">
+                <Node name="URG.GL.LaserDataDraw" expanded="True">
+                  <Node name="sensor" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+          <Node name="URGTest" expanded="True" />
         </State>
       </Pad>
     </Pads>
