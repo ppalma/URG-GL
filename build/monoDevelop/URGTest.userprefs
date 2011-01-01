@@ -3,39 +3,43 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ctype="Workbench">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../src/URG.GL.LaserSpatialDataDraw/LaserSpatialDataDraw.cs" ctype="Workbench">
+    <Files>
+      <File FileName="../../src/URG.GL.LaserSpatialDataDraw/LaserSpatialDataDraw.cs" Line="43" Column="49" />
+      <File FileName="../../src/URG.GL.LaserSpatialDataDraw/Main.cs" Line="1" Column="1" />
+      <File FileName="../../src/URG.GL.LaserDataDraw/LaserDataDraw.cs" Line="132" Column="12" />
+      <File FileName="../../src/URG.GL.DataDraw/DataDraw.cs" Line="311" Column="34" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
-          <Node name="MBF.Sensors" expanded="True" />
-          <Node name="URG.Gl" expanded="True">
-            <Node name="ExternalFiles" expanded="True" />
-          </Node>
-          <Node name="URG.GL.DataDraw" expanded="True">
-            <Node name="ExternalFiles" expanded="True" />
-          </Node>
-          <Node name="URG.GL.LaserDataDraw" expanded="True">
+          <Node name="URG.GL.LaserSpatialDataDraw" expanded="True">
             <Node name="ExternalFiles" expanded="True">
-              <Node name="LaserDataDraw.cs" selected="True" />
+              <Node name="LaserSpatialDataDraw.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True">
-          <Node name="URG.Gl" expanded="True">
-            <Node name="URG" expanded="True" />
-          </Node>
-          <Node name="URG.GL.LaserDataDraw" expanded="True">
+          <Node name="URG.Gl" expanded="True" />
+          <Node name="URG.GL.LaserDataDraw" expanded="True" />
+          <Node name="URG.GL.LaserSpatialDataDraw" expanded="True">
             <Node name="URG" expanded="True">
               <Node name="GL" expanded="True">
-                <Node name="URG.GL.LaserDataDraw" expanded="True">
-                  <Node name="sensor" selected="True" />
+                <Node name="URG.GL.LaserSpatialDataDraw" expanded="True">
+                  <Node name=".ctor" selected="True" />
                 </Node>
               </Node>
             </Node>
           </Node>
           <Node name="URGTest" expanded="True" />
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>b166er</Value>
+          <Value>power</Value>
         </State>
       </Pad>
     </Pads>

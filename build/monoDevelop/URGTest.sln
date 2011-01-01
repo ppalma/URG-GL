@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.DataDraw", "URG.GL.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.LaserDataDraw", "URG.GL.LaserDataDraw\URG.GL.LaserDataDraw.csproj", "{15EED367-C0FA-4072-B02B-568AE66A3989}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.MotorSpatial", "URG.GL.MotorSpatial\URG.GL.MotorSpatial.csproj", "{474BA7AF-DEA8-4DA3-918F-447FC92F8EB6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.LaserSpatialDataDraw", "URG.GL.LaserSpatialDataDraw\URG.GL.LaserSpatialDataDraw.csproj", "{B827363B-B435-4924-A58B-63B60C98E54A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,6 @@ Global
 		{15EED367-C0FA-4072-B02B-568AE66A3989}.Debug|x86.Build.0 = Debug|x86
 		{15EED367-C0FA-4072-B02B-568AE66A3989}.Release|x86.ActiveCfg = Release|x86
 		{15EED367-C0FA-4072-B02B-568AE66A3989}.Release|x86.Build.0 = Release|x86
-		{474BA7AF-DEA8-4DA3-918F-447FC92F8EB6}.Debug|x86.ActiveCfg = Debug|x86
-		{474BA7AF-DEA8-4DA3-918F-447FC92F8EB6}.Debug|x86.Build.0 = Debug|x86
-		{474BA7AF-DEA8-4DA3-918F-447FC92F8EB6}.Release|x86.ActiveCfg = Release|x86
-		{474BA7AF-DEA8-4DA3-918F-447FC92F8EB6}.Release|x86.Build.0 = Release|x86
 		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Debug|x86.ActiveCfg = Debug|x86
 		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Debug|x86.Build.0 = Debug|x86
 		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Release|x86.ActiveCfg = Release|x86
@@ -35,6 +31,10 @@ Global
 		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Debug|x86.Build.0 = Debug|x86
 		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Release|x86.ActiveCfg = Release|x86
 		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Release|x86.Build.0 = Release|x86
+		{B827363B-B435-4924-A58B-63B60C98E54A}.Debug|x86.ActiveCfg = Debug|x86
+		{B827363B-B435-4924-A58B-63B60C98E54A}.Debug|x86.Build.0 = Debug|x86
+		{B827363B-B435-4924-A58B-63B60C98E54A}.Release|x86.ActiveCfg = Release|x86
+		{B827363B-B435-4924-A58B-63B60C98E54A}.Release|x86.Build.0 = Release|x86
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Debug|x86.ActiveCfg = Debug|x86
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Debug|x86.Build.0 = Debug|x86
 		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Release|x86.ActiveCfg = Release|x86
@@ -46,7 +46,7 @@ Global
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		outputpath = ..\..\debug
-		StartupItem = URG.GL.DataDraw\URG.GL.DataDraw.csproj
+		StartupItem = URG.GL.LaserSpatialDataDraw\URG.GL.LaserSpatialDataDraw.csproj
 		Policies = $0
 		$0.StandardHeader = $1
 		$1.Text = @#region Header\n    ${FileName} created with MonoDevelop\n    User: Patricio Palma S. as ppalma at ${Time} ${Date}\n    --------------------------------------------------------------------------\n    ${projectName}\n    Copyright (C) 2006-2008  Patricio Palma S. All Rights Reserved.\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with this program.  If not, see <http://www.gnu.org/licenses/>.\n    --------------------------------------------------------------------------\n\n    UNIT                : ${FileName}\n    SUMMARY            :     \n    PRINCIPLE AUTHOR     : Patricio Palma S. <mail@ppalma.cl>\n\n#endregion Header\n#region Revisions\n --------------------------------------------------------------------------\n    REVISIONS/NOTES\n        dd-mm-yyyy    By          Revision Summary\n\n --------------------------------------------------------------------------\n#endregion Revisions

@@ -77,16 +77,17 @@ namespace URG.GL
 		
 		protected virtual void SensorInitialization()
 		{
-			
-			sensor = new MBF.Sensors.URG("/dev/ttyACM0");
-			
-			try {
-				sensor.Connect();
-				Console.WriteLine(sensor.ToString());
-			} 
-			catch (Exception e) {
-				Console.WriteLine("URG Error:[{0}]", e.Message);
-			}
+
+//			try {
+				sensor = new MBF.Sensors.URG("/dev/ttyACM0");
+				sensor.Connect();//TODO:Why connect ends app, unsing unplugged laser   ? ??????
+				Console.WriteLine(sensor.GetVersionLines());
+//			} 
+//			catch (Exception e) {
+//				sensor = new MBF.Sensors.URG();
+//				Console.WriteLine("URG Error:[{0}]", e.Message);
+//			}			
+		
 		}
 		
 		protected override void PaintHandler ()
@@ -120,7 +121,6 @@ namespace URG.GL
 				}
 				
 				if ((index & 0x3) == 0x00) {
-					Console.WriteLine(it.ToString());
 					Tao.OpenGl.Gl.glBegin(Tao.OpenGl.Gl.GL_LINE_STRIP);
 					Tao.OpenGl.Gl.glVertex3d(0.0, 0.0, 0.0);
 					Tao.OpenGl.Gl.glVertex3d(it.x * ratio, it.y * ratio, it.z * ratio);
@@ -129,7 +129,7 @@ namespace URG.GL
 			}
 		}
 		
-		private void convertScanData(Line line)
+		protected void convertScanData(Line line)
 		{
 			data_max_ = sensor.MaxScanLines;
 			length_min_ = sensor.MinDistance;
