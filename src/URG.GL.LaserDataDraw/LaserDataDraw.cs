@@ -79,44 +79,74 @@ namespace URG.GL
 		{
 			
 			sensor = new MBF.Sensors.URG("/dev/ttyACM0");
+			
 			try {
 				sensor.Connect();
 				Console.WriteLine(sensor.ToString());
 			} 
 			catch (Exception e) {
-				Console.WriteLine("URG Error: {0}", e.Message);
+				Console.WriteLine("URG Error:[{0}]", e.Message);
 			}
-//				Console.WriteLine("URG Error: {0}", 3);
 		}
 		protected override void IdleHandler ()
 		{
-//			base.IdleHandler ();
-			redraw(new Point3d<int>(),false,false);
+			double ratio = (1.0 / 2.0) + (5.0 * magnify_ / 100.0);
+//			drawLine(new Point3d<int>(0,0,0),new Point3d<int>(10000,20000,0),ratio);
+//			data_ = sensor.GetFullGDData();
+//			
+			Line l = new Line();
+			convertScanData(l);
+			foreach (int a in data_)
+			{
+				double radian = sensor.Index2Rad(a) + (Math.PI/2);
+//			Console.WriteLine(radian);
+//				
+				l.points.Add(new Point3d<int>(
+				                              (int)(1000 * Math.Cos(radian)),
+				                              (int)(1000 * Math.Sin(radian)),
+				                              0
+				                               ));
+			}
+//			drawLaser(l,ratio);i
+//			saved_lines_data_.Clear();
+			saved_lines_data_.Add(l);
+			PaintHandler(); //??
+			
 		}
+		public void drawLaser(Line line, double ratio)
+  		{
+    		Tao.OpenGl.Gl.glColor3d(0.6, 0.0, 0.0);
+
+    		int index = 0;
+    		//for (Points::iterator it = line.points.begin();
+         	//	it != line.points.end(); ++it, ++index) {
+			foreach (Point3d<int> it in line.points) {
+
+			    if ((it.x == 0) && (it.y == 0) && (it.z == 0)) {
+        			continue;
+      			}
+
+      			if ((index & 0x3) == 0x00) {
+        			Tao.OpenGl.Gl.glBegin(Tao.OpenGl.Gl.GL_LINE_STRIP);
+        			Tao.OpenGl.Gl.glVertex3d(0.0, 0.0, 0.0);
+        			Tao.OpenGl.Gl.glVertex3d(it.x * ratio, it.y * ratio, it.z * ratio);
+        		Tao.OpenGl.	Gl.glEnd();
+      			}
+    		}
+  		}
 		private void redraw(Point3d<int> wii_rotate, bool record, bool no_plot)
 		{
   			no_plot_ = no_plot;
 
 		  	Line line = new Line();
-		  	line.rotate = wii_rotate;
+//		  	line.rotate = wii_rotate;
 		  	convertScanData(line);
 		
-		  	if (record) {
-		    	if (pre_record_ == false) {
-		      		// 新しい記録が開始されたら、前回の記録データを削除
-		      		saved_lines_data_.Clear();
-		    	}
-		    	// 描画データとして登録
-		    	addSaveLine(line);
-		
-		  	} else {
-		    	// 一時データとして登録
-		    	addTemporaryLine(line);
-		  	}
 		
 		  	// 最新データをレーザ表示用に登録
 		  	//if (! line.points.empty()) {
 			if (line.points.Count > 0) {
+				Console.WriteLine("asdf");
 				//TODO: check this!!, suposly the "swap" function just exchanche data from b to a...check if the qrobosdk do the same...
 		    	//swap(recent_line_data_, line);
 				Line tmpl = new Line();

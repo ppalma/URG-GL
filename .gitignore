@@ -8,4 +8,4 @@
 *.exe
 *.o
 *.so
-debug/*
+debug

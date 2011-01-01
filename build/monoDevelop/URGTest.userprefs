@@ -3,14 +3,21 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../src/URG.GL.MotorSpatial/MotorSpatial.cs" ctype="Workbench">
-    <Files>
-      <File FileName="../../src/URG.GL.MotorSpatial/MotorSpatial.cs" Line="98" Column="28" />
-      <File FileName="../../src/URG.GL.LaserDataDraw/LaserDataDraw.cs" Line="1" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ctype="Workbench">
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True" selected="True" />
+        <State expanded="True">
+          <Node name="MBF.Sensors" expanded="True" />
+          <Node name="URG.GL.DataDraw" expanded="True">
+            <Node name="ExternalFiles" expanded="True" />
+          </Node>
+          <Node name="URG.GL.LaserDataDraw" expanded="True">
+            <Node name="References" expanded="True" />
+            <Node name="ExternalFiles" expanded="True">
+              <Node name="Main.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True">

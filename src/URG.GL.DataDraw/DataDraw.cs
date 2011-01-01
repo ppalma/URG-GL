@@ -183,7 +183,20 @@ namespace URG.GL
 		}
 		
 
-		
+		public void drawLine(Point3d<int> a, Point3d<int>b,double ratio)
+		{
+			Tao.OpenGl.Gl.glColor3d(1.0, 1.0, 1.0);
+			// y = (y2-y1/x2-x1) x + y1
+			for (double x = (double)a.x; x < ((double) b.x); x+=0.2)
+			{
+				double y = ( (b.y - a.y ) / ( b.x - a.x) + a.y );
+				Tao.OpenGl.Gl.glBegin(Tao.OpenGl.Gl.GL_LINE_STRIP);
+				Tao.OpenGl.Gl.glVertex3d(0.0, 0.0, 0.0);
+				Tao.OpenGl.Gl.glVertex3d(x * ratio, y * ratio, 0);
+				Tao.OpenGl.	Gl.glEnd();
+			}
+			Console.WriteLine(ratio);
+		}
 		public void drawLine(Line line, bool record, double ratio)
 		{
 			if (! record) {

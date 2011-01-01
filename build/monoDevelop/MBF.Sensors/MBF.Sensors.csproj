@@ -46,4 +46,9 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <Resource Include="..\..\..\src\MBF.Sensors\MBF.Sensors.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
 </Project>
