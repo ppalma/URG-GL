@@ -61,7 +61,11 @@ namespace URG.GL
 		//TODO: note than in original code "rhs" is received as "&" supose to be "content" of variable
 		//mmm, may be don't need it, "=" operator is allready "byref" by default...
 		public Point3d(Point3d<T> rhs): this(rhs.x, rhs.y, rhs.z) { }
-		
+		public override string ToString ()
+		{
+			return string.Format("({0},{1},{2})",x,y,z);
+		}
+
 		 //public static Matrix operator +(Matrix A, Matrix B)
 //        public static Point3d<T> operator =(Point3d<T> rhs)
 //        {

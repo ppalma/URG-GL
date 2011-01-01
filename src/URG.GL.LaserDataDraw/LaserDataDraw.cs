@@ -52,10 +52,10 @@ namespace URG.GL
 		public int length_max_;
 		public bool h_type_ = false;
 		public bool front_only_ = false;
-//		public bool pre_record_ = false;
-//		private int ticks;
 		public List<int> data_ = new List<int>();
 		public List<int> intensity_data_ = new List<int>();
+		
+		
 		public LaserDataDraw():base()
 		{
 			data_max_ = 0;
@@ -88,92 +88,45 @@ namespace URG.GL
 				Console.WriteLine("URG Error:[{0}]", e.Message);
 			}
 		}
-		protected override void IdleHandler ()
+		
+		protected override void PaintHandler ()
 		{
-			double ratio = (1.0 / 2.0) + (5.0 * magnify_ / 100.0);
-//			drawLine(new Point3d<int>(0,0,0),new Point3d<int>(10000,20000,0),ratio);
-//			data_ = sensor.GetFullGDData();
-//			
-			Line l = new Line();
-			convertScanData(l);
-			foreach (int a in data_)
-			{
-				double radian = sensor.Index2Rad(a) + (Math.PI/2);
-//			Console.WriteLine(radian);
-//				
-				l.points.Add(new Point3d<int>(
-				                              (int)(1000 * Math.Cos(radian)),
-				                              (int)(1000 * Math.Sin(radian)),
-				                              0
-				                               ));
-			}
-//			drawLaser(l,ratio);i
-//			saved_lines_data_.Clear();
-			saved_lines_data_.Add(l);
-			PaintHandler(); //??
+			Tao.OpenGl.Gl.glClearColor(0.0f, 0.0f, 0.0f, 1f);
+			Tao.OpenGl.Gl.glClear(Tao.OpenGl.Gl.GL_COLOR_BUFFER_BIT | Tao.OpenGl.Gl.GL_DEPTH_BUFFER_BIT);
+			Tao.OpenGl.Gl.glLoadIdentity();
 			
+			Tao.OpenGl.Gl.glRotated(x_rot_ / 16.0, 1.0, 0.0, 0.0);
+			Tao.OpenGl.Gl.glRotated(y_rot_ / 16.0, 0.0, 1.0, 0.0);
+			Tao.OpenGl.Gl.glRotated((z_rot_ / 16.0) + 90, 0.0, 0.0, 1.0);
+			
+			Line l = new Line();
+			
+			convertScanData(l);
+			double ratio = (1.0 / 2.0) + (5.0 * magnify_ / 100.0);
+			drawLaser(l,ratio);
+			Tao.FreeGlut.Glut.glutSwapBuffers();
 		}
+		
 		public void drawLaser(Line line, double ratio)
-  		{
-    		Tao.OpenGl.Gl.glColor3d(0.6, 0.0, 0.0);
+		{
+			Tao.OpenGl.Gl.glColor3d(0.6, 0.0, 0.0);
 
-    		int index = 0;
-    		//for (Points::iterator it = line.points.begin();
-         	//	it != line.points.end(); ++it, ++index) {
+			int index = 0;
+			
 			foreach (Point3d<int> it in line.points) {
 
 			    if ((it.x == 0) && (it.y == 0) && (it.z == 0)) {
-        			continue;
-      			}
-
-      			if ((index & 0x3) == 0x00) {
-        			Tao.OpenGl.Gl.glBegin(Tao.OpenGl.Gl.GL_LINE_STRIP);
-        			Tao.OpenGl.Gl.glVertex3d(0.0, 0.0, 0.0);
-        			Tao.OpenGl.Gl.glVertex3d(it.x * ratio, it.y * ratio, it.z * ratio);
-        		Tao.OpenGl.	Gl.glEnd();
-      			}
-    		}
-  		}
-		private void redraw(Point3d<int> wii_rotate, bool record, bool no_plot)
-		{
-  			no_plot_ = no_plot;
-
-		  	Line line = new Line();
-//		  	line.rotate = wii_rotate;
-		  	convertScanData(line);
-		
-		
-		  	// 最新データをレーザ表示用に登録
-		  	//if (! line.points.empty()) {
-			if (line.points.Count > 0) {
-				Console.WriteLine("asdf");
-				//TODO: check this!!, suposly the "swap" function just exchanche data from b to a...check if the qrobosdk do the same...
-		    	//swap(recent_line_data_, line);
-				Line tmpl = new Line();
-				tmpl.intensity = recent_line_data_.intensity;
-				tmpl.points = recent_line_data_.points;
-				tmpl.rotate = recent_line_data_.rotate;
-				tmpl.timestamp = recent_line_data_.timestamp;
+					continue;
+				}
 				
-				recent_line_data_.intensity = line.intensity;
-				recent_line_data_.points = line.points;
-				recent_line_data_.rotate = line.rotate;
-				recent_line_data_.timestamp = line.timestamp;
-				
-				line.intensity = tmpl.intensity;
-				line.points = tmpl.points;
-				line.rotate = tmpl.rotate;
-				line.timestamp = tmpl.timestamp;
-
-				
-				//recent_line_data_ = line;
-		  	}
-		
-		  	pre_record_ = record;
-		
-		  	//updateGL();
-			//Glut.glutSwapBuffers(); //??
-			PaintHandler(); //??
+				if ((index & 0x3) == 0x00) {
+					Console.WriteLine(it.ToString());
+					Tao.OpenGl.Gl.glBegin(Tao.OpenGl.Gl.GL_LINE_STRIP);
+					Tao.OpenGl.Gl.glVertex3d(0.0, 0.0, 0.0);
+					Tao.OpenGl.Gl.glVertex3d(it.x * ratio, it.y * ratio, it.z * ratio);
+					Tao.OpenGl.Gl.glEnd();
+				}
+			}
 		}
 		
 		private void convertScanData(Line line)
@@ -267,6 +220,7 @@ namespace URG.GL
 			point.x = (int)(x2);
 			point.y = (int)(y2);
 		}
+		
 		private  void adjustTypeH(Point3d<int> p, int degree)
 		{
 			if ((degree > -20) && (degree < 20)) {
@@ -284,14 +238,6 @@ namespace URG.GL
 				p = new Point3d<int>(0, 0, 0);
 			}
 		}
-		private void addSaveLine(Line line)
-		{
-			saved_lines_data_.Add(line);
-		}
-		
-		public void addTemporaryLine(Line line)
-		{
-			normal_lines_data_.Add(line);
-		}
+
 	}
 }

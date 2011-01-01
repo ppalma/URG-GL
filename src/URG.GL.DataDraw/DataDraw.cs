@@ -266,6 +266,9 @@ namespace URG.GL
 //			}
 			
 			Tao.OpenGl.Gl.glEnd();
+			
+						
+			
 			Glut.glutSwapBuffers();
 		}
 			

@@ -8,13 +8,15 @@
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="MBF.Sensors" expanded="True" />
+          <Node name="URG.Gl" expanded="True">
+            <Node name="ExternalFiles" expanded="True" />
+          </Node>
           <Node name="URG.GL.DataDraw" expanded="True">
             <Node name="ExternalFiles" expanded="True" />
           </Node>
           <Node name="URG.GL.LaserDataDraw" expanded="True">
-            <Node name="References" expanded="True" />
             <Node name="ExternalFiles" expanded="True">
-              <Node name="Main.cs" selected="True" />
+              <Node name="LaserDataDraw.cs" selected="True" />
             </Node>
           </Node>
         </State>
