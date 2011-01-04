@@ -1,0 +1,11 @@
+
+# Compiled source #
+###################
+*.com
+*.class
+#*.dll
+*.mdb
+*.exe
+*.o
+*.so
+debug

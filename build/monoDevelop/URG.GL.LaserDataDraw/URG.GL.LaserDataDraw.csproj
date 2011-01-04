@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15EED367-C0FA-4072-B02B-568AE66A3989}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>URG.GL.LaserDataDraw</RootNamespace>
+    <AssemblyName>URG.GL.LaserDataDraw</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\debug\URG.GL.LaserDataDraw</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\debug\URG.GL.LaserDataDraw</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\src\URG.GL.LaserDataDraw\LaserDataDraw.cs" />
+    <Compile Include="..\..\..\src\URG.GL.LaserDataDraw\Main.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MBF.Sensors\MBF.Sensors.csproj">
+      <Project>{D99F690A-00FA-49FB-8209-0ABC060901AE}</Project>
+      <Name>MBF.Sensors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\URG.GL.DataDraw\URG.GL.DataDraw.csproj">
+      <Project>{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}</Project>
+      <Name>URG.GL.DataDraw</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\URG.Gl\URG.Gl.csproj">
+      <Project>{73C0D42F-B1A8-428F-8D09-B49CA77495AA}</Project>
+      <Name>URG.Gl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <StandardHeader Text="#region Header&#xA;    ${FileName} created with MonoDevelop&#xA;    User: Patricio Palma S. as ppalma at ${Time} ${Date}&#xA;    --------------------------------------------------------------------------&#xA;    ${projectName}&#xA;    Copyright (C) 2006-2008  Patricio Palma S. All Rights Reserved.&#xA;&#xA;    This program is free software: you can redistribute it and/or modify&#xA;    it under the terms of the GNU General Public License as published by&#xA;    the Free Software Foundation, either version 3 of the License, or&#xA;    (at your option) any later version.&#xA;&#xA;    This program is distributed in the hope that it will be useful,&#xA;    but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;    GNU General Public License for more details.&#xA;&#xA;    You should have received a copy of the GNU General Public License&#xA;    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.&#xA;    --------------------------------------------------------------------------&#xA;&#xA;    UNIT                : ${FileName}&#xA;    SUMMARY            :     &#xA;    PRINCIPLE AUTHOR     : Patricio Palma S. &lt;mail@ppalma.cl&gt;&#xA;&#xA;#endregion Header&#xA;#region Revisions&#xA; --------------------------------------------------------------------------&#xA;    REVISIONS/NOTES&#xA;        dd-mm-yyyy    By          Revision Summary&#xA;&#xA; --------------------------------------------------------------------------&#xA;#endregion Revisions" inheritsSet="MITX11License" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Reference Include="Tao.FreeGlut, Version=2.4.0.1, Culture=neutral, PublicKeyToken=6e602a6ad6c0d06d">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dependencies\dotNet Assembly\Tao.FreeGlut.dll</HintPath>
+    </Reference>
+    <Reference Include="Tao.OpenGl, Version=2.1.0.4, Culture=neutral, PublicKeyToken=1ca010269a4501ef">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dependencies\dotNet Assembly\Tao.OpenGl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

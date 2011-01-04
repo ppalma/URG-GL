@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URGTest", "URGTest\URGTest.csproj", "{C0C732F0-2B62-45C2-8E55-8F813D4580C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MBF.Sensors", "MBF.Sensors\MBF.Sensors.csproj", "{D99F690A-00FA-49FB-8209-0ABC060901AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.Gl", "URG.Gl\URG.Gl.csproj", "{73C0D42F-B1A8-428F-8D09-B49CA77495AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.DataDraw", "URG.GL.DataDraw\URG.GL.DataDraw.csproj", "{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.LaserDataDraw", "URG.GL.LaserDataDraw\URG.GL.LaserDataDraw.csproj", "{15EED367-C0FA-4072-B02B-568AE66A3989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.LaserSpatialDataDraw", "URG.GL.LaserSpatialDataDraw\URG.GL.LaserSpatialDataDraw.csproj", "{B827363B-B435-4924-A58B-63B60C98E54A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URG.GL.LaserSpatialServoDataDraw", "URG.GL.LaserSpatialServoDataDraw\URG.GL.LaserSpatialServoDataDraw.csproj", "{5292D68D-AC45-42C7-B47E-B51E724E653A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15EED367-C0FA-4072-B02B-568AE66A3989}.Debug|x86.ActiveCfg = Debug|x86
+		{15EED367-C0FA-4072-B02B-568AE66A3989}.Debug|x86.Build.0 = Debug|x86
+		{15EED367-C0FA-4072-B02B-568AE66A3989}.Release|x86.ActiveCfg = Release|x86
+		{15EED367-C0FA-4072-B02B-568AE66A3989}.Release|x86.Build.0 = Release|x86
+		{5292D68D-AC45-42C7-B47E-B51E724E653A}.Debug|x86.ActiveCfg = Debug|x86
+		{5292D68D-AC45-42C7-B47E-B51E724E653A}.Debug|x86.Build.0 = Debug|x86
+		{5292D68D-AC45-42C7-B47E-B51E724E653A}.Release|x86.ActiveCfg = Release|x86
+		{5292D68D-AC45-42C7-B47E-B51E724E653A}.Release|x86.Build.0 = Release|x86
+		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Debug|x86.ActiveCfg = Debug|x86
+		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Debug|x86.Build.0 = Debug|x86
+		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Release|x86.ActiveCfg = Release|x86
+		{73C0D42F-B1A8-428F-8D09-B49CA77495AA}.Release|x86.Build.0 = Release|x86
+		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Debug|x86.ActiveCfg = Debug|x86
+		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Debug|x86.Build.0 = Debug|x86
+		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Release|x86.ActiveCfg = Release|x86
+		{A971BCC1-7087-4B75-827A-CE7DFFB9FF89}.Release|x86.Build.0 = Release|x86
+		{B827363B-B435-4924-A58B-63B60C98E54A}.Debug|x86.ActiveCfg = Debug|x86
+		{B827363B-B435-4924-A58B-63B60C98E54A}.Debug|x86.Build.0 = Debug|x86
+		{B827363B-B435-4924-A58B-63B60C98E54A}.Release|x86.ActiveCfg = Release|x86
+		{B827363B-B435-4924-A58B-63B60C98E54A}.Release|x86.Build.0 = Release|x86
+		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Debug|x86.ActiveCfg = Debug|x86
+		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Debug|x86.Build.0 = Debug|x86
+		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Release|x86.ActiveCfg = Release|x86
+		{C0C732F0-2B62-45C2-8E55-8F813D4580C1}.Release|x86.Build.0 = Release|x86
+		{D99F690A-00FA-49FB-8209-0ABC060901AE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D99F690A-00FA-49FB-8209-0ABC060901AE}.Debug|x86.Build.0 = Debug|Any CPU
+		{D99F690A-00FA-49FB-8209-0ABC060901AE}.Release|x86.ActiveCfg = Release|Any CPU
+		{D99F690A-00FA-49FB-8209-0ABC060901AE}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		outputpath = ..\..\debug
+		StartupItem = URG.GL.LaserSpatialServoDataDraw\URG.GL.LaserSpatialServoDataDraw.csproj
+		Policies = $0
+		$0.StandardHeader = $1
+		$1.Text = @#region Header\n    ${FileName} created with MonoDevelop\n    User: Patricio Palma S. as ppalma at ${Time} ${Date}\n    --------------------------------------------------------------------------\n    ${projectName}\n    Copyright (C) 2006-2008  Patricio Palma S. All Rights Reserved.\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License as published by\n    the Free Software Foundation, either version 3 of the License, or\n    (at your option) any later version.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with this program.  If not, see <http://www.gnu.org/licenses/>.\n    --------------------------------------------------------------------------\n\n    UNIT                : ${FileName}\n    SUMMARY            :     \n    PRINCIPLE AUTHOR     : Patricio Palma S. <mail@ppalma.cl>\n\n#endregion Header\n#region Revisions\n --------------------------------------------------------------------------\n    REVISIONS/NOTES\n        dd-mm-yyyy    By          Revision Summary\n\n --------------------------------------------------------------------------\n#endregion Revisions
+		$1.inheritsSet = MITX11License
+	EndGlobalSection
+EndGlobal

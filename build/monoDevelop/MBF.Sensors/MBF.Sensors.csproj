@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D99F690A-00FA-49FB-8209-0ABC060901AE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MBF.Sensors</RootNamespace>
+    <AssemblyName>MBF.Sensors</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\debug\MBF.Sensors</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\debug\MBF.Sensors</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="..\..\..\src\MBF.Sensors\URG.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <StandardHeader Text="#region Header&#xA;    ${FileName} created with MonoDevelop&#xA;    User: Patricio Palma S. as ppalma at ${Time} ${Date}&#xA;    --------------------------------------------------------------------------&#xA;    ${projectName}&#xA;    Copyright (C) 2006-2008  Patricio Palma S. All Rights Reserved.&#xA;&#xA;    This program is free software: you can redistribute it and/or modify&#xA;    it under the terms of the GNU General Public License as published by&#xA;    the Free Software Foundation, either version 3 of the License, or&#xA;    (at your option) any later version.&#xA;&#xA;    This program is distributed in the hope that it will be useful,&#xA;    but WITHOUT ANY WARRANTY; without even the implied warranty of&#xA;    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#xA;    GNU General Public License for more details.&#xA;&#xA;    You should have received a copy of the GNU General Public License&#xA;    along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.&#xA;    --------------------------------------------------------------------------&#xA;&#xA;    UNIT                : ${FileName}&#xA;    SUMMARY            :     &#xA;    PRINCIPLE AUTHOR     : Patricio Palma S. &lt;mail@ppalma.cl&gt;&#xA;&#xA;#endregion Header&#xA;#region Revisions&#xA; --------------------------------------------------------------------------&#xA;    REVISIONS/NOTES&#xA;        dd-mm-yyyy    By          Revision Summary&#xA;&#xA; --------------------------------------------------------------------------&#xA;#endregion Revisions" inheritsSet="MITX11License" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Resource Include="..\..\..\src\MBF.Sensors\MBF.Sensors.dll.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+</Project>
