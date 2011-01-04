@@ -305,10 +305,9 @@ namespace URG.GL
 				System.Environment.Exit(0);
 				break;
 			default:
-				Console.WriteLine(key);
+				base.KeyboardHandler(key,x,y);
 				break;
 			}
-			base.KeyboardHandler(key,x,y);
 		}
 	
 		protected override void ReshapeHandler(int width, int height)
@@ -336,10 +335,7 @@ namespace URG.GL
 			Console.WriteLine("\t m : Zoom in  | Scroll down");
 			Console.WriteLine("\t n : Zoom Out | Scroll up");
                         
-			Console.WriteLine("Laser");
-
-			Console.WriteLine("\t\t r : Start/Stop record");
-			Console.WriteLine("\t\t t : Show/Hide Laser");
+			
                         
 			Console.WriteLine("Files");
 			Console.WriteLine("\t o : Open");

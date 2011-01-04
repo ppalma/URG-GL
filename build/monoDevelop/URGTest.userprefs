@@ -3,22 +3,10 @@
   <MonoDevelop.Ide.DebuggingService>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService>
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../src/URG.GL.LaserSpatialDataDraw/LaserSpatialDataDraw.cs" ctype="Workbench">
-    <Files>
-      <File FileName="../../src/URG.GL.LaserSpatialDataDraw/LaserSpatialDataDraw.cs" Line="43" Column="49" />
-      <File FileName="../../src/URG.GL.LaserSpatialDataDraw/Main.cs" Line="1" Column="1" />
-      <File FileName="../../src/URG.GL.LaserDataDraw/LaserDataDraw.cs" Line="132" Column="12" />
-      <File FileName="../../src/URG.GL.DataDraw/DataDraw.cs" Line="311" Column="34" />
-    </Files>
+  <MonoDevelop.Ide.Workbench ctype="Workbench">
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="URG.GL.LaserSpatialDataDraw" expanded="True">
-            <Node name="ExternalFiles" expanded="True">
-              <Node name="LaserSpatialDataDraw.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
+        <State expanded="True" />
       </Pad>
       <Pad Id="ClassPad">
         <State expanded="True">

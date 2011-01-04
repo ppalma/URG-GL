@@ -56,7 +56,15 @@ namespace URG.GL
 			SpatialInitialization();
 			base.Show ();
 		}
-		
+		override protected void HotKeys()
+		{
+			base.HotKeys();
+			Console.WriteLine("Laser");
+
+			Console.WriteLine("\t\t r : Start/Stop record");
+			Console.WriteLine("\t\t t : Show/Hide Laser");
+			
+		}
 		private void SpatialInitialization()
 		{
 			spatial = new Spatial();
@@ -79,7 +87,7 @@ namespace URG.GL
 			spatial.DataRate = 80 ;
 		}
 		
-		private void SpatialData(object sender, SpatialDataEventArgs e)
+		protected virtual void SpatialData(object sender, SpatialDataEventArgs e)
 		{
 				if (spatial.accelerometerAxes.Count > 0)
 				{
@@ -88,8 +96,9 @@ namespace URG.GL
 					acc.y = e.spatialData[0].Acceleration[1]; 
 					acc.z = e.spatialData[0].Acceleration[0]; 
 				}
+//			Console.WriteLine(acc);
 		}
-		private void redrawCap()
+		protected virtual void redrawCap()
 		{
 			Point3d<int> spatial_rotate = new Point3d<int>();
 			spatial_rotate = getSpatialRotate();
@@ -99,7 +108,7 @@ namespace URG.GL
 			}
 			redraw(spatial_rotate, record, plot);
 		}
-		private Point3d<int> getSpatialRotate()
+		protected virtual Point3d<int> getSpatialRotate()
 		{
 			Point3d<int> spatial_rotate = new Point3d<int>();
 			
@@ -119,7 +128,7 @@ namespace URG.GL
 			
 			return spatial_rotate;
 		}
-		private void redraw(Point3d<int> spatial_rotate, bool record, bool no_plot)
+		protected virtual void  redraw(Point3d<int> spatial_rotate, bool record, bool no_plot)
 		{
 			no_plot_ = no_plot;
 
@@ -224,8 +233,10 @@ namespace URG.GL
 			case (byte) 'T':
 				this.plot = !this.plot;
 				break;
+			default:
+				base.KeyboardHandler(key,x,y);
+				break;
 			}
-			base.KeyboardHandler(key,x,y);
 		}
 	}
 }

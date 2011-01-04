@@ -1,8 +1,8 @@
 #region Header
 //     Main.cs created with MonoDevelop
-//     User: Patricio Palma S. as ppalma at 5:19 PM 12/29/2010
+//     User: Patricio Palma S. as ppalma at 4:38 PM 1/1/2011
 //     --------------------------------------------------------------------------
-//     URG.GL.MotorSpatial
+//     URG.GL.LaserSpatialServoDataDraw
 //     Copyright (C) 2006-2008  Patricio Palma S. All Rights Reserved.
 // 
 //     This program is free software: you can redistribute it and/or modify
@@ -32,6 +32,7 @@
 //  --------------------------------------------------------------------------
 #endregion Revisions
 
+
 using System;
 
 namespace URG.GL
@@ -40,9 +41,9 @@ namespace URG.GL
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello URG Gl  motor spatial Test!");
-			MotorSpatial ms = new MotorSpatial();
-			ms.Show();
+			Console.WriteLine ("Hello URG Gl laser spatial servo Data Draw Test!");
+			URG.GL.LaserSpatialServoDataDraw win = new URG.GL.LaserSpatialServoDataDraw();
+			win.Show();
 		}
 	}
 }
